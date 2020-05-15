@@ -1,4 +1,5 @@
 FROM alpine:3.11
 RUN apk add --no-cache ffmpeg
+COPY docker-entrypoint.sh /docker-enrrypoint.sh
 VOLUME /frames
-ENTRYPOINT ffmpeg -rtsp_transport tcp -i $SRC -vf fps=1 /frames/%d.png
+ENTRYPOINT ["/docker-enrrypoint.sh"]
