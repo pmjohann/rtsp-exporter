@@ -1,5 +1,11 @@
 FROM alpine:3.12
+
+# INSTALL FFMPEG
 RUN apk add --no-cache ffmpeg
-COPY docker-entrypoint.sh /docker-enrrypoint.sh
+
+# CREATE VOLUME FOR EXPORTED FRAMES
 VOLUME /frames
-ENTRYPOINT ["/docker-enrrypoint.sh"]
+
+# COPY AND SET ENTRYPOINT
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
