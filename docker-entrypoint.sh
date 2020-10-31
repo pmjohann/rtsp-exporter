@@ -10,4 +10,4 @@ if [ -z $DEBUG ]; then
     LOGLEVEL="-loglevel panic"
 fi
 
-ffmpeg $LOGLEVEL -rtsp_transport tcp -i $SRC -vf fps=1 -strftime 1 "/frames/%s.png"
+ffmpeg $LOGLEVEL -rtsp_transport tcp -i $SRC -vf fps=1 -strftime 1 "/frames/%s.$EXT"
