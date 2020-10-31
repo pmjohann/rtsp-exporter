@@ -15,14 +15,6 @@ docker run --rm -e SRC='rtsp://user:pass@address:port' -v /host/path/to/frames:/
 docker run --rm -v /host/path/to/frames:/frames pmjohann/rtsp-exporter rtsp://user:pass@address:port
 ```
 
-### Timezones
-
-By default, the frame images output by ffmpeg will be named as the datetime they are saved. To change the timezone, set the TZ environment variable like this:
-
-```
-docker run --rm  -v /host/path/to/frames:/frames pmjohann/rtsp-exporter -e TZ=Europe/Zurich rtsp://user:pass@address:port
-```
-
 ### Debug mode
 
 By default the ffmpeg flag *-loglevel panic* is set. In order to gain debug info, pass the -e DEBUG=1 environment variable.
